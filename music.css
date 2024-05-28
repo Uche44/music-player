@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #9fe099;
+}
+.music-player {
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+#music-img {
+  width: 200px;
+  aspect-ratio: 1;
+  background: url("/music/images/unity.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 7px 8px 12px #0000004f;
+  display: block;
+}
+
+.isPlaying {
+  animation: spin 2s forwards linear infinite;
+}
+
+#music-img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 8px 8px 4px #000000a6;
+  background: #fff;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#music-name {
+  font-size: 2.4rem;
+  position: absolute;
+  bottom: 36%;
+  font-weight: 600;
+  color: rgb(1, 83, 1);
+  /* text-shadow: 0px, 0px, 5px gray; */
+}
+#artist {
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 31%;
+  font-weight: 300;
+}
+audio {
+  position: absolute;
+  top: 53%;
+}
+.progress-wrap {
+  width: 90%;
+  height: 10px;
+  background-color: #6de563;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 26%;
+  cursor: pointer;
+}
+.progress {
+  height: 100%;
+  /* width will change dynamically */
+  width: 66%;
+  border-radius: 5px;
+  background-color: darkgreen;
+  transition: width 0.1s linear;
+}
+.duration-wrapper {
+  position: absolute;
+  width: 90%;
+  bottom: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.controls {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 8%;
+}
+i {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+i.next,
+i.prev {
+  font-size: 30px;
+}
